@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Dice from './images/Dice';
+import Dice from './images/dice';
 import './images/dice.css';
 
 function DiceRoll() {

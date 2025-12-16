@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Coin from './images/Coin';
+import Coin from './images/coin';
 import './images/coin.css';
 
 function CoinFlip() {

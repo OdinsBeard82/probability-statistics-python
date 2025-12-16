@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
+import './images/NumberRange.css';
 
 function NumberRange() {
-    const [number, setNumber] = useState(null);
+    const [number, setNumber] = useState(0);
 
-    const pickNumber = () => {
-        const outcome = Math.floor(Math.random() * 10) + 1; // 1-10
-        setNumber(outcome);
+    const generateNumber = () => {
+        const randomNum = Math.floor(Math.random() * 100) + 1; // example 1–100
+        setNumber(randomNum);
     };
 
     return (
-        <div style={{ marginBottom: '20px' }}>
-            <h2>Random Number (1–10)</h2>
-            <button onClick={pickNumber}>Pick Number</button>
-            {number && <p>Number: {number}</p>}
+        <div className="NumberRange">
+            <h2>Number Range</h2>
+
+            {/* Animated number */}
+            <div className="number-display">{number}</div>
+
+            <button onClick={generateNumber}>Generate Number</button>
         </div>
     );
 }
