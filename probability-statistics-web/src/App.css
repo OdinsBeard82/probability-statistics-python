@@ -1,12 +1,10 @@
-/* General page styling */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #fff8f0;
   margin: 0;
   padding: 0;
 }
 
-/* Container for the App */
 .App {
   max-width: 800px;
   margin: 0 auto;
@@ -14,65 +12,57 @@ body {
   text-align: center;
 }
 
-/* Page title */
 .App h1 {
-  color: #2c3e50;
+  color: #d94f1b;
   margin-bottom: 30px;
 }
 
-/* Each simulation component */
 div[class*="Flip"],
-/* CoinFlip */
 div[class*="Dice"],
-/* DiceRoll */
 div[class*="Number"],
-/* NumberRange */
-div[class*="Monty"]
-
-/* MontyHall */
-  {
-  background-color: #ffffff;
-  border: 2px solid #3498db;
+div[class*="Monty"] {
+  background-color: #fff3e6;
+  border: 2px solid #f39c12;
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 2px 2px 12px rgba(224, 123, 57, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Hover effect for components */
 div[class*="Flip"]:hover,
 div[class*="Dice"]:hover,
 div[class*="Number"]:hover,
 div[class*="Monty"]:hover {
   transform: scale(1.02);
+  box-shadow: 3px 3px 15px rgba(224, 123, 57, 0.4);
 }
 
-/* Headings in each component */
 h2 {
-  color: #2980b9;
+  color: #f39c12;
   margin-bottom: 10px;
 }
 
-/* Buttons */
 button {
-  background-color: #3498db;
-  color: white;
+  background-color: #f39c12;
+  color: #fffaf0;
   border: none;
   padding: 10px 15px;
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #e67e22;
+  transform: scale(1.05);
 }
 
-/* Results text */
 p {
   font-size: 16px;
   margin: 10px 0;
+  color: #a64b2a;
 }

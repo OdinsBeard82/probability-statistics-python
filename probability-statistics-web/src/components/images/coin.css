@@ -3,16 +3,14 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    /* space between coin and button */
 }
 
-/* Coin styles */
 .coin {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #ffdd67, #d4af37 70%, #b8860b 100%);
-    border: 2px solid #d4af37;
+    background: radial-gradient(circle at 30% 30%, #f39c12, #d94f1b 70%, #e67e22 100%);
+    border: 2px solid #d9864a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +24,6 @@
     position: relative;
 }
 
-/* Front and back sides */
 .front,
 .back {
     position: absolute;
@@ -43,7 +40,6 @@
     transform: rotateY(180deg);
 }
 
-/* Flip animation classes */
 .coin.heads {
     transform: rotateX(20deg) rotateY(15deg);
 }
@@ -52,10 +48,9 @@
     transform: rotateX(20deg) rotateY(195deg);
 }
 
-/* Button styling */
 button {
-    background-color: #3498db;
-    color: white;
+    background-color: #f39c12;
+    color: #fffaf0;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -65,5 +60,5 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #e67e22;
 }

@@ -1,49 +1,60 @@
 import React, { useState } from 'react';
+import MontyDoor from '../components/images/MontyDoor';
+import './images/MontyHall.css';
 
 function MontyHall() {
-    const [wins, setWins] = useState({ switch: 0, stay: 0 });
-    const [trials, setTrials] = useState(0);
+    const [prizeIndex, setPrizeIndex] = useState(null);
+    const [selected, setSelected] = useState(null);
+    const [revealed, setRevealed] = useState(null);
+    const [result, setResult] = useState(null);
 
-    const simulate = (switchDoor, numTrials = 1000) => {
-        let switchWins = 0;
-        let stayWins = 0;
+    const startGame = () => {
+        setPrizeIndex(Math.floor(Math.random() * 3));
+        setSelected(null);
+        setRevealed(null);
+        setResult(null);
+    };
 
-        for (let i = 0; i < numTrials; i++) {
-            const doors = [0, 1, 2]; // 0 = car, 1 & 2 = goats
-            const car = Math.floor(Math.random() * 3);
-            let choice = Math.floor(Math.random() * 3);
-            const remainingDoors = doors.filter(d => d !== choice && d !== car);
-            // Host opens a goat door
-            const hostOpen = remainingDoors[Math.floor(Math.random() * remainingDoors.length)];
+    const chooseDoor = (index) => {
+        setSelected(index);
+        const options = [0, 1, 2].filter(i => i !== index && i !== prizeIndex);
+        setRevealed(options[Math.floor(Math.random() * options.length)]);
+    };
 
-            if (switchDoor) {
-                choice = doors.find(d => d !== choice && d !== hostOpen);
-            }
-
-            if (choice === car) {
-                switchDoor ? switchWins++ : stayWins++;
-            }
-        }
-
-        setWins(prev => ({
-            switch: prev.switch + switchWins,
-            stay: prev.stay + stayWins
-        }));
-        setTrials(prev => prev + numTrials);
+    const makeChoice = (switchDoor) => {
+        const finalChoice = switchDoor
+            ? [0, 1, 2].find(i => i !== selected && i !== revealed)
+            : selected;
+        setResult(finalChoice === prizeIndex ? 'You won!' : 'You lost!');
     };
 
     return (
-        <div style={{ marginBottom: '20px' }}>
+        <div className="MontyHall">
             <h2>Monty Hall Simulation</h2>
-            <button onClick={() => simulate(true)}>Switch Doors</button>
-            <button onClick={() => simulate(false)}>Stay with Choice</button>
-            {trials > 0 && (
-                <div>
-                    <p>Total Trials: {trials}</p>
-                    <p>Wins if switched: {wins.switch} ({((wins.switch / trials) * 100).toFixed(1)}%)</p>
-                    <p>Wins if stayed: {wins.stay} ({((wins.stay / trials) * 100).toFixed(1)}%)</p>
+
+            <div className="doors">
+                {[0, 1, 2].map(i => (
+                    <MontyDoor
+                        key={i}
+                        index={i}
+                        selected={selected}
+                        revealed={revealed}
+                        prize={i === prizeIndex}
+                        onClick={() => selected === null && chooseDoor(i)}
+                    />
+                ))}
+            </div>
+
+            {selected !== null && result === null && (
+                <div className="choices">
+                    <p>Switch or Stay?</p>
+                    <button onClick={() => makeChoice(true)}>Switch</button>
+                    <button onClick={() => makeChoice(false)}>Stay</button>
                 </div>
             )}
+
+            {result && <p className="result">{result}</p>}
+            <button onClick={startGame}>Restart Game</button>
         </div>
     );
 }
