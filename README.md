@@ -1,6 +1,6 @@
 # probability-statistics-python
 
-Python implementations of **Probability & Statistics fundamentals** — building the mathematical foundation for **Machine Learning and AI**.
+Python implementations of **Probability & Statistics fundamentals**, paired with **interactive visual simulations**, building the mathematical foundation for **Machine Learning and AI**.
 
 ---
 
@@ -8,13 +8,12 @@ Python implementations of **Probability & Statistics fundamentals** — building
 
 This repository is part of **Phase 2** of my structured **AI / Machine Learning study path**.
 
-The focus here is on understanding probability and statistics *properly* — not just formulas, but intuition, simulations, and how these ideas show up in real ML problems.
+The focus here is on understanding probability and statistics *properly* — not just formulas, but intuition, simulations, and how these ideas behave in practice.
 
-Each topic is backed by:
+Each topic is approached from two angles:
 
-* clear written notes
-* small Python scripts
-* simulations to make abstract ideas concrete
+* **Python simulations and calculations** for mathematical understanding
+* **Interactive web-based visualisations** to make abstract ideas tangible
 
 ---
 
@@ -24,7 +23,7 @@ This project builds on concepts from:
 
 * **Khan Academy – Probability & Statistics**
 * MIT-style mathematical thinking
-* Practical Python experimentation
+* Practical experimentation through code and simulation
 
 Topics include (added progressively):
 
@@ -41,6 +40,21 @@ Topics include (added progressively):
 
 ---
 
+## Interactive Probability Web App
+
+Alongside the Python work, I’ve built a **React-based Probability & Statistics Web App** that visually demonstrates key concepts.
+
+Current simulations include:
+
+* Coin flip simulation with history tracking
+* Dice roll simulation with animated dice faces
+* Random number range generator
+* Interactive Monty Hall problem
+
+These visuals help reinforce intuition before diving deeper into formal mathematics and ML applications.
+
+---
+
 ## Project Structure
 
 Each folder represents a topic or week of study and contains:
@@ -48,6 +62,7 @@ Each folder represents a topic or week of study and contains:
 * **Notes (`.md`)** – concepts explained in plain language
 * **Python scripts (`.py`)** – simulations and calculations
 * **Optional plots** – visual intuition where useful
+* **Web components (when applicable)** – interactive demonstrations
 
 Example structure:
 
@@ -62,25 +77,36 @@ Week-1-Basic-Probability/
 
 ## Why This Matters for ML
 
-Probability and statistics are at the core of:
+Probability and statistics sit at the core of:
 
 * model uncertainty
 * loss functions
-* optimization
+* optimisation
 * evaluation metrics
-* Bayesian models
+* Bayesian reasoning
 
-This repo exists to make sure those foundations are solid *before* moving deeper into ML algorithms.
+This repository exists to ensure these foundations are solid *before* moving into machine learning algorithms and deep learning systems.
 
 ---
 
 ## Tech Stack
 
-* **Python**
-* **NumPy**
-* **Matplotlib**
-* **Jupyter (optional)**
-* **Git & GitHub**
+**Python side**
+
+* Python
+* NumPy
+* Matplotlib
+* Jupyter (optional)
+
+**Web visualisation side**
+
+* React
+* JavaScript
+* CSS animations
+
+**General**
+
+* Git & GitHub
 
 ---
 
@@ -116,8 +142,16 @@ This repository is **Phase 2** of my AI / ML roadmap:
 
 ## Learning Method
 
-Each concept is first studied visually (videos), then written in my own words, and finally implemented or simulated in Python.
+Each concept is:
 
+1. Studied visually and theoretically
+2. Written out in my own words
+3. Implemented or simulated in Python
+4. Reinforced through interactive visualisation where useful
+
+The goal is deep understanding, not surface-level familiarity.
+
+---
 
 ## Status
 
@@ -128,3 +162,4 @@ Each concept is first studied visually (videos), then written in my own words, a
 ## License
 
 MIT License
+
