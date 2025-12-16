@@ -114,6 +114,11 @@ This repository is **Phase 2** of my AI / ML roadmap:
 
 ---
 
+## Learning Method
+
+Each concept is first studied visually (videos), then written in my own words, and finally implemented or simulated in Python.
+
+
 ## Status
 
 🚧 In progress — updated weekly as I move through the material.
