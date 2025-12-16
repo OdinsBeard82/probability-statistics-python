@@ -3,28 +3,27 @@ import Coin from './images/Coin';
 import './images/coin.css';
 
 function CoinFlip() {
-    const [side, setSide] = useState('Heads'); // Track the current side
+    const [side, setSide] = useState('Heads');
     const [result, setResult] = useState('');
     const [history, setHistory] = useState([]);
 
     const flipCoin = () => {
         const outcome = Math.random() < 0.5 ? 'Heads' : 'Tails';
-        setSide(outcome);       // Update visual coin
-        setResult(outcome);     // Update text result
+        setSide(outcome);
+        setResult(outcome);
         setHistory(prev => [...prev, outcome]);
     };
 
     return (
-        <div style={{ marginBottom: '20px' }}>
+        <div className="CoinFlip" style={{ marginBottom: '20px', textAlign: 'center' }}>
             <h2>Coin Flip</h2>
 
-            {/* Coin display */}
-            <Coin side={side} />
+            {/* Wrapper to center coin and button */}
+            <div className="coin-wrapper">
+                <Coin side={side} />
+                <button onClick={flipCoin}>Flip Coin</button>
+            </div>
 
-            {/* Flip button */}
-            <button onClick={flipCoin}>Flip Coin</button>
-
-            {/* Result and history */}
             {result && <p>Result: {result}</p>}
             {history.length > 0 && <p>History: {history.join(', ')}</p>}
         </div>

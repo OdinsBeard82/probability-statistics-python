@@ -3,7 +3,7 @@ import './coin.css';
 
 function Coin({ side = 'Heads' }) {
     return (
-        <div className="coin-container">
+        <div className="coin-wrapper">
             <div className={`coin ${side.toLowerCase()}`}>
                 <div className="front">Heads</div>
                 <div className="back">Tails</div>
