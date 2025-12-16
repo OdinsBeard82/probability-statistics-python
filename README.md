@@ -1,5 +1,7 @@
 # probability-statistics-python
 
+<img width="452" height="713" alt="Screenshot 2025-12-16 at 14 39 38" src="https://github.com/user-attachments/assets/a3c8372d-8c20-4ece-b9fd-91a08a3e952f" />
+
 Python implementations of **Probability & Statistics fundamentals**, paired with **interactive visual simulations**, building the mathematical foundation for **Machine Learning and AI**.
 
 ---
